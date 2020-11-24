@@ -1,0 +1,475 @@
+/*
+    Contents
+    --------
+
+    1. Variables
+    2. Functions / Mix-ins
+    3. General Styles
+    4. Header
+    5. Main
+        a. Benefits
+        b. Programs
+        c. FAQ
+        d. Plans
+    6. Footer
+    7. Media Queries (Imported)
+*/ 
+
+
+// Variables.
+$black: #111;
+$white: #fff;
+$offWhite: rgba(238, 238, 238, 0.884); 
+$grey: #aaaaaa41;
+$lighterGrey: #aaaaaa15; 
+$orange: linear-gradient(-90deg, #ff5600, #ff6600, #ff8000);
+$orangeHover: linear-gradient(-90deg, #ff4600, #ff4600);
+$border: $grey 5px solid;
+
+// Mix-ins.
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// General Styles.
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Kumbh Sans', arial, sans-serif;
+    background: $black;
+    color: $white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    transition: 200ms;
+    &:hover{
+        color: #ff6600;
+        border-image: $orange 1 round;
+        border-bottom: 2px solid transparent;
+        line-height: 0.6;
+    }
+}
+
+.btn {
+    background-image: $orange;
+    color: $black;
+    padding: 0.4rem 0.3rem 0.2rem;
+    display: inline-block;
+    width: max-content;
+    border-radius: 0.2rem;
+    transition: 200ms;
+    &:hover {
+        background-image: $orangeHover;
+    }
+}
+
+form {
+    @include flex();
+    flex-direction: column;
+    input[type=email] {
+        font-family: inherit;
+        border-radius: 0.3rem;
+        display: block;
+        outline: none;
+        border: none;
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+        height: 2.5rem;
+        padding: 0.5rem;
+        width: 90%;
+        // max-width: 500px;
+    }
+    button[type=submit] {        
+        font-family: inherit;
+        display: block;
+        outline: none;
+        border: none;
+        height: 2rem;
+        padding: 0.2rem 1rem 0;
+        font-weight: bolder;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+}
+
+// Header Section.
+header {
+    background:rgba(0, 0, 0, 0.6);
+    background-image: url(images/moviegridbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    padding-bottom: 3.5rem;
+    nav {
+        ul{
+            @include flex();
+            justify-content: space-between; 
+            list-style-type: none;
+            padding: 0.5rem;
+            .btn--signIn {
+                &:hover{
+                    color: $black;
+                    border: none;
+                    line-height: 1;
+                }
+            }
+        }
+        .logo{
+            font-family: Roboto Mono, monospace;
+            font-weight: bold;
+            font-size: 1.8rem;
+            letter-spacing: -6px;
+            color: #ff8000;
+            margin-right: 00.5rem;
+        }
+    }
+    section {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem 0.8rem;
+        h1{
+            line-height: 1.2;
+            font-weight: bolder;
+        }
+        h3 {
+            padding: 0.8rem 0;
+        }
+    }
+}
+
+// Main Section.
+//  => a. Benefits
+.benefits {
+    border-top: $border;
+    text-align: center;
+    &:last-of-type {
+        border-bottom: $grey 5px solid;
+    }
+    .benefits__text {
+        h2 {
+            margin: 2rem auto 0rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            padding: 0.3rem 1rem;
+        }
+    }
+    .benefits__img {
+        position: relative;
+        padding-bottom: 2rem;
+        img {
+            max-width: 100%;
+        }
+        .img--scaled {
+            max-width: 60%;
+        }
+    }
+    .benefits__extra {
+        @include flex();
+        justify-content: space-between;
+        padding: 0.5rem 0 0.5rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid $grey;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        bottom: 0.2rem;
+        z-index: 5;
+        div {
+            text-align: left;
+        }
+        .benefits__extra-text{
+            font-size: 0.6rem;              
+            color: #0071EB;
+        }
+        .download-icon {
+            margin: 0 1rem;
+            max-width: 40px;
+            border-radius: 50%;
+        }
+        .thumbnail {
+            max-width: 100px;
+            border-radius: 0.3rem;
+            display: flex;
+        }
+    }
+}
+
+// => b. Programs
+.wrapper-programs {
+    color: $offWhite;
+    display: grid;
+    height: 50%;
+    grid-template-areas:
+        'header'
+        'program1'
+        'program2'
+        'program3'
+        'program4'
+        'program5'
+        'program6';
+    gap: 0.1rem;
+    .program__header{
+        text-align: center;
+        grid-area: header;
+        margin: 2rem 0.5rem;
+        h1{
+            margin: 0.5rem;
+        }
+    }
+    .program {
+        position: relative;
+        .program__overlay {
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.35);
+        }
+        img {
+            max-width: 100%;
+            visibility: hidden;
+        }
+    }
+    .program1 {
+        grid-area: program1;        
+        background-image: url(images/live.jpg);
+        background-size: cover;
+        background-position: center;  
+    }
+    .program2 {
+        @extend .program1;
+        grid-area: program2;     
+        background-image: url(images/movies.jpg);
+    }
+    .program3 {
+        @extend .program1;
+        grid-area: program3;
+        background-image: url(images/anime.jpg);
+    }
+    .program4 {
+        @extend .program1;
+        grid-area: program4;     
+        background-image: url(images/tvshows.jpg);
+    }
+    .program5 {
+        @extend .program1;
+        grid-area: program5;     
+        background-image: url(images/grownish.jpg);
+    }
+    .program6 {
+        @extend .program1;
+        grid-area: program6;     
+        background-image: url(images/kids.jpg); 
+    }
+}
+
+// => c. Frequently Asked Questions
+.wrapper-faq {    
+    border-top: $border;
+    border-bottom: $border;
+    @include flex();
+    flex-direction: column;
+    padding-bottom: 2rem;
+    .faq__header {
+        margin: 2rem auto;
+        text-align: center;
+        line-height: 1.2;
+        padding: 0.5rem;
+    }
+    .faq__card {
+        width: 90%;
+    }
+    .question {
+        @include flex();
+        justify-content: space-between;
+        border: none;
+        border-radius: 0.4rem;
+        outline: none;
+        padding: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        font-family: inherit;
+        background-color: $lighterGrey;
+        color: $white;
+        cursor: pointer;
+        text-align: left;
+        transition: 300ms;
+        &:hover {
+            background-color: $grey;
+        }
+        span {
+            transition: transform 150ms ease;
+            padding: 0.5rem;
+            display: inline-block;
+            transform: scale(2);
+        }
+    }
+    .question--active {
+        background-color: $grey;
+        span {
+            transform: scale(2.1) rotate(45deg);
+        }
+    }
+
+    .answer {
+        padding: 0rem 1rem;
+        margin-bottom: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: 200ms;
+        p {
+            padding-top: 1rem;
+        }
+    }
+}
+
+// => d. Plans 
+.plans {
+    @include flex();
+    flex-direction: column;
+    padding-bottom: 2rem;    
+    text-align: center;
+    .plan__header {
+        margin: 2rem 0 1rem;
+        ul {
+            list-style-type: none;
+        }
+    }
+    .plan__wrapper {
+        @include flex();
+        flex-direction: column;
+        width: 80%;
+    }
+    .plan__item {
+        @include flex();
+        flex-direction: column;
+        border-radius: 1rem;      
+        border: solid 1px $grey;
+        box-shadow: 0px 0px 5px 2px $lighterGrey;
+        padding: 1.5rem 0;
+        width: 90%;
+        margin: 0.5rem auto;
+        &:nth-of-type(2) {         
+            box-shadow: 0px 0px 15px 10px $lighterGrey;
+        }
+        p{
+            font-size: 0.8rem;
+            margin: 0.3rem 0;
+        }
+        .btn--plan {
+            width: 100%;
+            text-align: center;
+            color: $black;
+            border: none;
+            line-height: 1;
+            border-radius: unset;
+            margin-bottom: 0.3rem;
+        }
+    }
+    form {
+        padding-top: 2rem;
+        width: 80%;
+    }
+}
+
+// Footer Section.
+footer {
+    @include flex();
+    flex-wrap: wrap;
+    border-top: $border;
+    padding: 1rem;    
+    section {
+        @include flex();
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 0 auto;       
+        border-bottom: $border;        
+        padding: 1rem;        
+        li {
+            list-style-type: none;
+            font-size: 0.6rem;
+            margin: 0.7rem 0;
+            a{
+                font-weight: initial;
+                &:hover{
+                    border-bottom: unset;
+                }
+            }
+        }
+        h5 {
+            font-size: 0.7rem;
+        }
+    }
+    .footer__section1 {
+        width: 80%;
+        padding-bottom: 1rem;
+    }
+    .footer__section2{
+        width: 80%;
+    }
+    .footer__section3 {
+        width: 100%;
+        ul {
+            list-style: none;
+            padding: 0.5rem 0;
+            li{
+                padding-right: 0.3rem;
+                display: inline-block;
+                cursor: pointer;
+                .fa-instagram{
+                    color: transparent;                    
+                    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                    -webkit-background-clip: text;
+                }
+                .fa-facebook-square {
+                    color: #3b5999;
+                }
+                .fa-twitter {
+                    color: #1da1f2;
+                }
+                .fa-github {
+                    color: grey;
+                }
+                a{
+                    &:hover{
+                        border-bottom: unset;
+                    }
+                }
+            }
+        }
+        div {
+            span{
+                display: block;
+                    padding-right: 0.1rem;
+            }
+            display: flex;
+            h6 {
+                display: contents;
+            }
+        }
+    }
+}
+
+@import "./mediaqueries.scss";

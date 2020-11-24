@@ -1,0 +1,782 @@
+/*
+    Contents
+    --------
+
+    1. Variables
+    2. Functions / Mix-ins
+    3. General Styles
+    4. Header
+    5. Main
+        a. Benefits
+        b. Programs
+        c. FAQ
+        d. Plans
+    6. Footer
+    7. Media Queries (Imported)
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Kumbh Sans', arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+a:hover {
+  color: #ff6600;
+  -o-border-image: linear-gradient(-90deg, #ff5600, #ff6600, #ff8000) 1 round;
+     border-image: -webkit-gradient(linear, right top, left top, from(#ff5600), color-stop(#ff6600), to(#ff8000)) 1 round;
+     border-image: linear-gradient(-90deg, #ff5600, #ff6600, #ff8000) 1 round;
+  border-bottom: 2px solid transparent;
+  line-height: 0.6;
+}
+
+.btn {
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff5600), color-stop(#ff6600), to(#ff8000));
+  background-image: linear-gradient(-90deg, #ff5600, #ff6600, #ff8000);
+  color: #111;
+  padding: 0.4rem 0.3rem 0.2rem;
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 0.2rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.btn:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff4600), to(#ff4600));
+  background-image: linear-gradient(-90deg, #ff4600, #ff4600);
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form input[type=email] {
+  font-family: inherit;
+  border-radius: 0.3rem;
+  display: block;
+  outline: none;
+  border: none;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+  height: 2.5rem;
+  padding: 0.5rem;
+  width: 90%;
+}
+
+form button[type=submit] {
+  font-family: inherit;
+  display: block;
+  outline: none;
+  border: none;
+  height: 2rem;
+  padding: 0.2rem 1rem 0;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  background-image: url(images/moviegridbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  padding-bottom: 3.5rem;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+header nav ul .btn--signIn:hover {
+  color: #111;
+  border: none;
+  line-height: 1;
+}
+
+header nav .logo {
+  font-family: Roboto Mono, monospace;
+  font-weight: bold;
+  font-size: 1.8rem;
+  letter-spacing: -6px;
+  color: #ff8000;
+  margin-right: 00.5rem;
+}
+
+header section {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0.8rem;
+}
+
+header section h1 {
+  line-height: 1.2;
+  font-weight: bolder;
+}
+
+header section h3 {
+  padding: 0.8rem 0;
+}
+
+.benefits {
+  border-top: #aaaaaa41 5px solid;
+  text-align: center;
+}
+
+.benefits:last-of-type {
+  border-bottom: #aaaaaa41 5px solid;
+}
+
+.benefits .benefits__text h2 {
+  margin: 2rem auto 0rem;
+}
+
+.benefits .benefits__text p {
+  margin-bottom: 1rem;
+  padding: 0.3rem 1rem;
+}
+
+.benefits .benefits__img {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.benefits .benefits__img img {
+  max-width: 100%;
+}
+
+.benefits .benefits__img .img--scaled {
+  max-width: 60%;
+}
+
+.benefits .benefits__extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #aaaaaa41;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 0.2rem;
+  z-index: 5;
+}
+
+.benefits .benefits__extra div {
+  text-align: left;
+}
+
+.benefits .benefits__extra .benefits__extra-text {
+  font-size: 0.6rem;
+  color: #0071EB;
+}
+
+.benefits .benefits__extra .download-icon {
+  margin: 0 1rem;
+  max-width: 40px;
+  border-radius: 50%;
+}
+
+.benefits .benefits__extra .thumbnail {
+  max-width: 100px;
+  border-radius: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper-programs {
+  color: rgba(238, 238, 238, 0.884);
+  display: -ms-grid;
+  display: grid;
+  height: 50%;
+      grid-template-areas: 'header' 'program1' 'program2' 'program3' 'program4' 'program5' 'program6';
+  gap: 0.1rem;
+}
+
+.wrapper-programs .program__header {
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  margin: 2rem 0.5rem;
+}
+
+.wrapper-programs .program__header h1 {
+  margin: 0.5rem;
+}
+
+.wrapper-programs .program {
+  position: relative;
+}
+
+.wrapper-programs .program .program__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.wrapper-programs .program img {
+  max-width: 100%;
+  visibility: hidden;
+}
+
+.wrapper-programs .program1, .wrapper-programs .program2, .wrapper-programs .program3, .wrapper-programs .program4, .wrapper-programs .program5, .wrapper-programs .program6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: program1;
+  background-image: url(images/live.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper-programs .program2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: program2;
+  background-image: url(images/movies.jpg);
+}
+
+.wrapper-programs .program3 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: program3;
+  background-image: url(images/anime.jpg);
+}
+
+.wrapper-programs .program4 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: program4;
+  background-image: url(images/tvshows.jpg);
+}
+
+.wrapper-programs .program5 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: program5;
+  background-image: url(images/grownish.jpg);
+}
+
+.wrapper-programs .program6 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: program6;
+  background-image: url(images/kids.jpg);
+}
+
+.wrapper-faq {
+  border-top: #aaaaaa41 5px solid;
+  border-bottom: #aaaaaa41 5px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+.wrapper-faq .faq__header {
+  margin: 2rem auto;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
+.wrapper-faq .faq__card {
+  width: 90%;
+}
+
+.wrapper-faq .question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  font-family: inherit;
+  background-color: #aaaaaa15;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.wrapper-faq .question:hover {
+  background-color: #aaaaaa41;
+}
+
+.wrapper-faq .question span {
+  -webkit-transition: -webkit-transform 150ms ease;
+  transition: -webkit-transform 150ms ease;
+  transition: transform 150ms ease;
+  transition: transform 150ms ease, -webkit-transform 150ms ease;
+  padding: 0.5rem;
+  display: inline-block;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.wrapper-faq .question--active {
+  background-color: #aaaaaa41;
+}
+
+.wrapper-faq .question--active span {
+  -webkit-transform: scale(2.1) rotate(45deg);
+          transform: scale(2.1) rotate(45deg);
+}
+
+.wrapper-faq .answer {
+  padding: 0rem 1rem;
+  margin-bottom: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.wrapper-faq .answer p {
+  padding-top: 1rem;
+}
+
+.plans {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.plans .plan__header {
+  margin: 2rem 0 1rem;
+}
+
+.plans .plan__header ul {
+  list-style-type: none;
+}
+
+.plans .plan__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+.plans .plan__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1rem;
+  border: solid 1px #aaaaaa41;
+  -webkit-box-shadow: 0px 0px 5px 2px #aaaaaa15;
+          box-shadow: 0px 0px 5px 2px #aaaaaa15;
+  padding: 1.5rem 0;
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+.plans .plan__item:nth-of-type(2) {
+  -webkit-box-shadow: 0px 0px 15px 10px #aaaaaa15;
+          box-shadow: 0px 0px 15px 10px #aaaaaa15;
+}
+
+.plans .plan__item p {
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+}
+
+.plans .plan__item .btn--plan {
+  width: 100%;
+  text-align: center;
+  color: #111;
+  border: none;
+  line-height: 1;
+  border-radius: unset;
+  margin-bottom: 0.3rem;
+}
+
+.plans form {
+  padding-top: 2rem;
+  width: 80%;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-top: #aaaaaa41 5px solid;
+  padding: 1rem;
+}
+
+footer section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  border-bottom: #aaaaaa41 5px solid;
+  padding: 1rem;
+}
+
+footer section li {
+  list-style-type: none;
+  font-size: 0.6rem;
+  margin: 0.7rem 0;
+}
+
+footer section li a {
+  font-weight: initial;
+}
+
+footer section li a:hover {
+  border-bottom: unset;
+}
+
+footer section h5 {
+  font-size: 0.7rem;
+}
+
+footer .footer__section1 {
+  width: 80%;
+  padding-bottom: 1rem;
+}
+
+footer .footer__section2 {
+  width: 80%;
+}
+
+footer .footer__section3 {
+  width: 100%;
+}
+
+footer .footer__section3 ul {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+footer .footer__section3 ul li {
+  padding-right: 0.3rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+footer .footer__section3 ul li .fa-instagram {
+  color: transparent;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  -webkit-background-clip: text;
+}
+
+footer .footer__section3 ul li .fa-facebook-square {
+  color: #3b5999;
+}
+
+footer .footer__section3 ul li .fa-twitter {
+  color: #1da1f2;
+}
+
+footer .footer__section3 ul li .fa-github {
+  color: grey;
+}
+
+footer .footer__section3 ul li a:hover {
+  border-bottom: unset;
+}
+
+footer .footer__section3 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footer__section3 div span {
+  display: block;
+  padding-right: 0.1rem;
+}
+
+footer .footer__section3 div h6 {
+  display: contents;
+}
+
+@media only screen and (min-width: 499px) {
+  .btn {
+    padding: 0.6rem 2rem 0.4rem;
+  }
+  header nav {
+    width: 95%;
+    margin: 0 auto;
+  }
+  header nav .logo {
+    font-size: 2.5rem;
+  }
+  header section h1 {
+    font-size: 2.5rem;
+    padding: 0 2rem;
+  }
+  .wrapper-programs {
+        grid-template-areas: 'header header' 'program1 program2' 'program1 program2' 'program1 program3' 'program4 program3' 'program4 program5' 'program6 program6';
+  }
+  .wrapper-faq .faq__card {
+    width: 70%;
+  }
+  .wrapper-faq .answer p {
+    padding-top: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 593px) {
+  html {
+    font-size: 20px;
+  }
+  footer section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+  }
+  footer .footer__section1 {
+    width: 40%;
+    padding: unset;
+  }
+  footer .footer__section2 {
+    width: 40%;
+  }
+  footer .footer__section3 {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 929px) {
+  form {
+    width: 60%;
+    margin: 0 auto;
+  }
+  header section {
+    padding: 7vw 0;
+  }
+  header section h1 {
+    padding: 0 20vw;
+  }
+  .benefits {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 40vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .benefits .benefits__text {
+    width: 40%;
+  }
+  .benefits .benefits__text h2 {
+    font-size: 2rem;
+  }
+  .benefits .benefits__img {
+    width: 50%;
+  }
+  .benefits .benefits__img .img--paddedUp {
+    padding-top: 2rem;
+  }
+  .benefits .benefits__img .img--scaled {
+    padding-top: 2rem;
+  }
+  .benefits--left {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .wrapper-faq .faq__card {
+    width: 60%;
+  }
+  .wrapper-faq .answer p {
+    padding-top: 1.2rem;
+  }
+  .plans {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .plans .plan__header {
+    width: 100%;
+  }
+  .plans .plan__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  .plans .plan__item {
+    width: 32%;
+  }
+  .plans .plan__item:nth-of-type(2) {
+    position: relative;
+    bottom: 2rem;
+  }
+  .plans form {
+    padding-top: unset;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1023px) {
+  .btn {
+    padding: 0.6rem 2rem 0.4rem;
+  }
+  .wrapper-programs {
+        grid-template-areas: 'header header header' 'program1 program2 program2' 'program1 program3 program6' 'program4 program5 program6';
+  }
+}
+/*# sourceMappingURL=styles.css.map */

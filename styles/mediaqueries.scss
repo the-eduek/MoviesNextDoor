@@ -1,0 +1,148 @@
+@media only screen and (min-width: 499px) {
+    .btn {
+        padding: 0.6rem 2rem 0.4rem;
+    }
+    header {        
+        nav {  
+            width: 95%;
+            margin: 0 auto;
+            .logo {
+                font-size: 2.5rem;
+            }
+        }            
+        section {
+            h1{
+                font-size: 2.5rem;
+                padding: 0 2rem;
+            }
+        }
+    }
+    .wrapper-programs {
+        grid-template-areas:
+        'header header'
+        'program1 program2'
+        'program1 program2'
+        'program1 program3'
+        'program4 program3'
+        'program4 program5'
+        'program6 program6';
+    }
+    .wrapper-faq {    
+        .faq__card {
+            width: 70%;
+        }
+        .answer {
+            p {
+                padding-top: 1.2rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 593px) {
+    html{ 
+        font-size: 20px;
+    }
+    footer {
+        section {
+            width: 80%;
+            margin: 0 auto;
+            padding: 1rem 1rem 0;
+        }
+        .footer__section1 {
+            width: 40%;
+            padding: unset;
+        }
+        .footer__section2{
+            width: 40%;
+        }
+        .footer__section3 {
+            width: 80%;
+        }
+    }
+}    
+
+@media only screen and (min-width: 929px) {
+    form {
+        width: 60%;
+        margin: 0 auto;
+    }
+    header {    
+        section {
+            padding: 7vw 0;
+            h1{
+                padding: 0 20vw;
+            }
+        }
+    }
+    .benefits {
+        @include flex();
+        min-height: 40vw;
+        flex-wrap: wrap;
+        .benefits__text {
+            width: 40%;
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        .benefits__img {
+            width: 50%;            
+            .img--paddedUp{
+                padding-top: 2rem;
+            }
+            .img--scaled {
+                padding-top: 2rem;
+            }
+        }
+    }
+    .benefits--left {
+        flex-direction: row-reverse;
+    }
+    .wrapper-faq {    
+        .faq__card {
+            width: 60%;
+        }
+        .answer {
+            p {
+                padding-top: 1.2rem;
+            }
+        }
+    }
+
+    .plans {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .plan__header {
+            width: 100%;
+        }
+        .plan__wrapper {
+            flex-direction: row;
+            width: 100%;
+            padding: 2rem 1rem;
+        }
+        .plan__item {
+            width: 32%;
+            &:nth-of-type(2) {
+                position: relative;
+                bottom: 2rem;               
+            }
+        }
+        form {
+            padding-top: unset;
+            width: 60%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1023px) {
+    .btn {
+        padding: 0.6rem 2rem 0.4rem;
+    }
+    .wrapper-programs {
+        grid-template-areas:
+            'header header header'
+            'program1 program2 program2'
+            'program1 program3 program6'
+            'program4 program5 program6';
+    }
+}
