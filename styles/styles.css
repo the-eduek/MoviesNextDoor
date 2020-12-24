@@ -111,7 +111,7 @@ form button[type=submit] {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   background-image: url(images/moviegridbackground.jpg);
   background-size: cover;
   background-position: center;
@@ -164,6 +164,10 @@ header section h1 {
 
 header section h3 {
   padding: 0.8rem 0;
+}
+
+header section p {
+  margin: 1rem 0;
 }
 
 .benefits {
